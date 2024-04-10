@@ -76,7 +76,6 @@ function cambioDropdownHidden(event){
     }
 }
 
-//da rivedere sotto non funzionano
 function mostraHiddenPrime(){
     const hiddenLayer = document.querySelector('#prime-flyout-container');
     if(hiddenLayer.classList.contains('hidden')){
@@ -103,11 +102,44 @@ function nascondiHiddenPrime(){
     }
 }
 
+let statoSfondo = 1;
+
+function cambioSfondoSnx(){
+    const sfondo = document.querySelector('#sfondo');
+    if(statoSfondo==1){
+        sfondo.src = "./Img/Pagina/Sfondo3.jpg";
+        statoSfondo=3;
+    } else if(statoSfondo==3){
+        sfondo.src = "./Img/Pagina/Sfondo2.png";
+        statoSfondo=2;
+    } else if(statoSfondo==2){
+        sfondo.src = "./Img/Pagina/Sfondo1.jpg";
+        statoSfondo=1;
+    }
+}
+function cambioSfondoDx(){
+    const sfondo = document.querySelector('#sfondo');
+    if(statoSfondo==1){
+        sfondo.src = "./Img/Pagina/Sfondo2.png";
+        statoSfondo=2;
+    } else if(statoSfondo==2){
+        sfondo.src = "./Img/Pagina/Sfondo3.jpg";
+        statoSfondo=3;
+    } else if(statoSfondo==3){
+        sfondo.src = "./Img/Pagina/Sfondo1.jpg";
+        statoSfondo=1;
+    }
+}
 
 
 
 
 aggiornaVisibilitaElementi();
+
+const sfondoSnx = document.querySelector('#banner-freccia-snx');
+sfondoSnx.addEventListener('click', cambioSfondoSnx);
+const sfondoDx = document.querySelector('#banner-freccia-dx');
+sfondoDx.addEventListener('click', cambioSfondoDx);
 window.addEventListener('resize', aggiornaVisibilitaElementi);
 
 const boxes = document.querySelectorAll('.nav-center a, .nav-left a, .nav-right a');
@@ -130,7 +162,6 @@ for(const button of dropdownButtons){
     button.addEventListener('click', cambioDropdownHidden);
 }
 
-
 let isMouseOverPrime = false;
 let isMouseOverHiddenPrime = false;
 const prime = document.querySelector('#prime-hidden-layer');
@@ -139,7 +170,6 @@ prime.addEventListener('mouseleave', esciPrime);
 const hiddenLayer = document.querySelector('#prime-flyout-container');
 primeHidden.addEventListener('mouseenter', entraHiddenPrime);
 primeHidden.addEventListener('mouseleave', nascondiHiddenPrime);
-
 
 
 

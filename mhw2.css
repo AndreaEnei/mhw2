@@ -29,7 +29,6 @@
 body{
     font-family: 'Amazon Ember', Arial, 'PT Sans';
     margin: 0px;
-    background-color: lightgrey;;
 }
 
 .hidden{
@@ -57,12 +56,12 @@ header nav{
 #nav-top{
     background-color: rgb(19, 25, 33);
     height: 60px;
-    z-index: 10;
+    z-index: 7;
 }
 #nav-bottom{
     background-color: rgb(35, 47, 62);
     height: 39px;
-    z-index: 10;
+    z-index: 7;
 }
 header nav div{
     height: 100%;
@@ -276,7 +275,7 @@ header nav div{
     display: flex;
     justify-content: end;
     align-items: center;
-    z-index: 10;
+    z-index: 7;
 }
 .nav-left, .nav-right{
     flex-shrink: 0;
@@ -547,30 +546,57 @@ header nav div{
     align-items: center;
 }
 
-#account-flyout-container{
-    position: absolute;
-    right: 77px;
-    top: 45px;
+
+#page-content{
+    background-color: rgb(227, 230, 230);
+    min-width: 1000px;
+    overflow: hidden;
 }
-#account-flyout{
+#img-sfondo{
+    height: 600px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    flex-direction: row;
+    min-width: 1000px ;
 }
-#arrow-account-position{
+#sfondo{
+    object-fit: cover;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+}
+#background-banner{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    top: 100px;
     position: absolute;
-    left: 363px;
 }
-.flyout-box-3{
-    height: 493px;
-    width: 500px;
-    background-color: rgb(255, 255, 255);
-    border: 0.8px solid rgb(187, 187, 187);
-    border-radius: 3px;
+#box-freccie{
+    width: 1500px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3px;
+    padding-right: 3px;
     box-sizing: border-box;
-    padding: 14px 14px;
-    padding-bottom: 7px;
-    z-index: 11;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
+.banner-freccia-esterno{
+    height: 250px;
+    width: 80px;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.banner-freccia{
+    height: 52px;
+    width: 34px;
+    background-image: url(./Img/Pagina/Freccie.png);
+    background-position-x: 0px;
+    background-position-y: 0px;
+}
+.banner-freccia-esterno:hover{
+    cursor: pointer;
+    border: 0.8px solid #fff;
+    border-radius: 4px;
+}
+
